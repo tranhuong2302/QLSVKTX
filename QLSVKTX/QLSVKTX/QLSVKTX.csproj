@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\ToaDAO.cs" />
     <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\Toa.cs" />
     <Compile Include="fDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +75,12 @@
     <Compile Include="fNhanVienProfile.Designer.cs">
       <DependentUpon>fNhanVienProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="fToaManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fToaManage.Designer.cs">
+      <DependentUpon>fToaManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fDashboard.resx">
@@ -86,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fNhanVienProfile.resx">
       <DependentUpon>fNhanVienProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fToaManage.resx">
+      <DependentUpon>fToaManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -64,7 +64,5 @@ namespace QLSVKTX.DTO
             this.TrangThai = row["TrangThai"].ToString();
 
         }
-       
-       
     }
 }

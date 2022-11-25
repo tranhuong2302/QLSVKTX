@@ -28,7 +28,7 @@ namespace QLSVKTX
 
         void ChangeAccount(string trangThai)
         {
-            if(trangThai == "Quản trị viên")
+            if(trangThai == "Quản trị viên" || trangThai == "admin")
                 btnNhanVien.Enabled = true;
             else 
                 btnNhanVien.Enabled = false;
@@ -42,6 +42,12 @@ namespace QLSVKTX
         private void btnNhanVienProfile_Click(object sender, EventArgs e)
         {
             fNhanVienProfile f = new fNhanVienProfile(LoginNhanVien);
+            f.ShowDialog();
+        }
+
+        private void btnToa_Click(object sender, EventArgs e)
+        {
+            fToaManage f = new fToaManage();
             f.ShowDialog();
         }
     }

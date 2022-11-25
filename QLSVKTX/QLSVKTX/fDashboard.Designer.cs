@@ -32,6 +32,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnNhanVienProfile = new System.Windows.Forms.Button();
+            this.btnToa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -60,11 +61,22 @@
             this.btnNhanVienProfile.UseVisualStyleBackColor = true;
             this.btnNhanVienProfile.Click += new System.EventHandler(this.btnNhanVienProfile_Click);
             // 
+            // btnToa
+            // 
+            this.btnToa.Location = new System.Drawing.Point(524, 95);
+            this.btnToa.Name = "btnToa";
+            this.btnToa.Size = new System.Drawing.Size(170, 67);
+            this.btnToa.TabIndex = 3;
+            this.btnToa.Text = "Quản lý toa";
+            this.btnToa.UseVisualStyleBackColor = true;
+            this.btnToa.Click += new System.EventHandler(this.btnToa_Click);
+            // 
             // fDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnToa);
             this.Controls.Add(this.btnNhanVienProfile);
             this.Controls.Add(this.btnNhanVien);
             this.Name = "fDashboard";
@@ -78,5 +90,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button btnNhanVienProfile;
+        private System.Windows.Forms.Button btnToa;
     }
 }

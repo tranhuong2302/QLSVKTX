@@ -64,6 +64,7 @@ namespace QLSVKTX.DAO
         //xóa
         public bool DeleteNhanVien(string maNV)
         {
+            ToaDAO.Instance.UpdateToaToNull(maNV);
             string query = string.Format("Delete dbo.NhanVien where MaNhanVien = N'{0}'", maNV);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -112,6 +113,21 @@ namespace QLSVKTX.DAO
             }
 
             return null;
+        }
+        public NhanVien GetNhanVienByMaNhanVien2(string maNV)
+        {
+            NhanVien nhanVien = null;
+            string query = string.Format("SELECT * FROM dbo.NhanVien WHERE MaNhanVien = N'{0}' ", maNV);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maNV });
+           
+
+            foreach (DataRow item in data.Rows)
+            {
+                nhanVien =  new NhanVien(item);
+                return nhanVien;
+            }
+
+            return nhanVien;
         }
         //đặt lại mk
         public bool ChangePassword(string maNV, string matKhau)
