@@ -246,9 +246,8 @@
             this.cbTinhTrangPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTinhTrangPhong.FormattingEnabled = true;
             this.cbTinhTrangPhong.Items.AddRange(new object[] {
-            "Còn chỗ",
-            "Hết chỗ",
-            "Đang sữa chữa"});
+            "Hoạt động",
+            "Bảo trì"});
             this.cbTinhTrangPhong.Location = new System.Drawing.Point(1141, 36);
             this.cbTinhTrangPhong.Name = "cbTinhTrangPhong";
             this.cbTinhTrangPhong.Size = new System.Drawing.Size(121, 24);

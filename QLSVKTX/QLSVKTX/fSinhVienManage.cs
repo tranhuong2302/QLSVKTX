@@ -66,7 +66,6 @@ namespace QLSVKTX
                     string maPhong = dtgvSinhVien.SelectedCells[0].OwningRow.Cells["MaPhong"].Value.ToString();
                     Phong phong = PhongDAO.Instance.GetPhongByMaPhong(maPhong);
                     cbMaPhong.SelectedItem = phong;
-                    ComboBox cb = sender as ComboBox;
                     
                     if (phong != null)
                     {
@@ -139,12 +138,21 @@ namespace QLSVKTX
             {
                 MessageBox.Show("Bạn vui lòng nhập đúng định dạng CMND(9 số), CCCD(12 số)", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (phong.TinhTrangPhong == "Bảo trì")
+            {
+                MessageBox.Show("Phòng hiện tại đang bảo trì xin vui lòng chọn phòng khác", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cbGioiTinh.Text != phong.LoaiPhong)
+            {
+                MessageBox.Show("Không được ở phòng khác giới", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else if(phong.SoLuongSinhVienHienTai >= phong.SoLuongSinhVienToiDa)
             {
                 MessageBox.Show("Phòng bạn chọn đã hết chỗ xin vui lòng chọn phòng khác", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (SinhVienDAO.Instance.InsertSinhVien(maSV, hoTen, ngaySinh, gioiTinh, namHoc, sdt, diaChi, cccd, ngayLamHopDong, ngayKetThucHopDong, maPhong, khoa))
             {
+                PhongDAO.Instance.UpdateSoLuongHienTaiCongMot(maPhong);
                 MessageBox.Show("Thêm sinh viên thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadSinhVien();
             }
@@ -185,6 +193,8 @@ namespace QLSVKTX
         }
         void EditSinhVien(string maSV, string hoTen, string ngaySinh, string gioiTinh, int namHoc, string sdt, string diaChi, string cccd, string ngayLamHopDong, string ngayKetThucHopDong, string maPhong, string khoa)
         {
+            Phong phong = PhongDAO.Instance.GetPhongByMaPhong(maPhong);
+            SinhVien sinhVien = SinhVienDAO.Instance.GetSinhVienByMaSinhVien(maSV);
             if (txbMaSV.Text == null || txbMaSV.Text == "")
             {
                 MessageBox.Show("Bạn không được để trống Mã sinh viên", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -217,15 +227,29 @@ namespace QLSVKTX
             {
                 MessageBox.Show("Bạn vui lòng nhập đúng định dạng CMND(9 số), CCCD(12 số)", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (phong.TinhTrangPhong == "Bảo trì")
+            {
+                MessageBox.Show("Phòng hiện tại đang bảo trì xin vui lòng chọn phòng khác", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cbGioiTinh.Text != phong.LoaiPhong)
+            {
+                MessageBox.Show("Không được ở phòng khác giới", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (phong.SoLuongSinhVienHienTai >= phong.SoLuongSinhVienToiDa)
+            {
+                MessageBox.Show("Phòng bạn chọn đã hết chỗ xin vui lòng chọn phòng khác", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else if (SinhVienDAO.Instance.UpdateSinhVien(maSV, hoTen, ngaySinh, gioiTinh, namHoc, sdt, diaChi, cccd, ngayLamHopDong, ngayKetThucHopDong, maPhong, khoa))
             {
+                PhongDAO.Instance.UpdateSoLuongHienTaiTruMot(sinhVien.MaPhong);
+                PhongDAO.Instance.UpdateSoLuongHienTaiCongMot(maPhong);
                 MessageBox.Show("Thay đổi thông tin sinh viên thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadSinhVien();
             }
             else
             {
                 MessageBox.Show("thay đổi thông tin sinh viên thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadSinhVien();
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -253,7 +277,7 @@ namespace QLSVKTX
                 EditSinhVien(maSV, hoTen, convertNgaySinh, gioiTinh, namHoc, sdt, diaChi, cccd, convertNgayLamHopDong, convertNgayKetThucHopDong, maPhong, khoa);
             }
         }
-        void DeleteSinhVien(string maSV)
+        void DeleteSinhVien(string maSV, string maPhong)
         {
             if (MessageBox.Show("Bạn có chắc là xóa sinh viên này?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
@@ -261,7 +285,9 @@ namespace QLSVKTX
                 
                 if (SinhVienDAO.Instance.DeleteSinhVienByMaSinhVien(maSV))
                 {
+                    PhongDAO.Instance.UpdateSoLuongHienTaiTruMot(maPhong);
                     MessageBox.Show("Xóa thành công thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadSinhVien();
 
                 }
                 else
@@ -269,13 +295,14 @@ namespace QLSVKTX
                     MessageBox.Show("Xóa sinh viên thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                LoadSinhVien();
+                
             }
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string maSV = txbMaSV.Text;
-            DeleteSinhVien(maSV);
+            string maPhong = cbMaPhong.Text;
+            DeleteSinhVien(maSV, maPhong);
         }
 
         private void btnList_Click(object sender, EventArgs e)
@@ -313,7 +340,7 @@ namespace QLSVKTX
             string maPhong = txbSeachByMaPhong.Text;
             sinhVienList.DataSource = SearchSinhVienByMaPhong(maPhong);
         }
-        void KetThucHopDong(string maSV, string ngayKetThucHopDong)
+        void KetThucHopDong(string maSV, string ngayKetThucHopDong, string maPhong)
         {
             if (MessageBox.Show("Bạn có chắc là muốn kết thúc hợp đồng?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
@@ -321,6 +348,7 @@ namespace QLSVKTX
 
                 if (SinhVienDAO.Instance.UpdateNgayKetThucHopDongToNull(maSV, ngayKetThucHopDong))
                 {
+                    PhongDAO.Instance.UpdateSoLuongHienTaiTruMot(maPhong);
                     MessageBox.Show("Kết thúc hợp đồng thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -335,9 +363,10 @@ namespace QLSVKTX
         private void btnNullNgayKetThucHopDong_Click(object sender, EventArgs e)
         {
             string maSV = txbMaSV.Text;
+            string maPhong = cbMaPhong.Text;
             DateTime ngayKetThucHopDong = DateTime.Now;
             string convertNgayKetThucHopDong = ngayKetThucHopDong.ToString("yyyy-MM-dd");
-            KetThucHopDong(maSV, convertNgayKetThucHopDong);
+            KetThucHopDong(maSV, convertNgayKetThucHopDong, maPhong);
         }
     } 
 }

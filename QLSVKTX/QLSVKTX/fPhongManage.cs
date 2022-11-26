@@ -95,6 +95,10 @@ namespace QLSVKTX
             {
                 MessageBox.Show("Bạn không được để trống số lượng sinh viên tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (nupHienTai.Value > nupToiDa.Value)
+            {
+                MessageBox.Show("Bạn không được nhập số lượng hiện tại lớn hơn số lượng tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else if (PhongDAO.Instance.InsertPhong(maPhong, maToa, tenPhong, loaiPhong, hienTai, toiDa, tinhTrangPhong))
             {
                 MessageBox.Show("Thêm phòng thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -141,6 +145,10 @@ namespace QLSVKTX
             else if (nupToiDa.Text == null || nupToiDa.Text == "")
             {
                 MessageBox.Show("Bạn không được để trống số lượng sinh viên tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (nupHienTai.Value > nupToiDa.Value)
+            {
+                MessageBox.Show("Bạn không được nhập số lượng hiện tại lớn hơn số lượng tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (PhongDAO.Instance.UpdatePhong(maPhong, maToa, tenPhong, loaiPhong, hienTai, toiDa, tinhTrangPhong))
             {

@@ -54,6 +54,20 @@ namespace QLSVKTX.DAO
             }
             else return false;
         }
+        public bool UpdateSoLuongHienTaiCongMot(string maPhong)
+        {
+            string query = string.Format("UPDATE dbo.Phong SET SoLuongSinhVienHienTai = SoLuongSinhVienHienTai + 1  WHERE MaPhong = N'{0}'", maPhong);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool UpdateSoLuongHienTaiTruMot(string maPhong)
+        {
+            string query = string.Format("UPDATE dbo.Phong SET SoLuongSinhVienHienTai = SoLuongSinhVienHienTai - 1  WHERE MaPhong = N'{0}'", maPhong);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
         //sửa
         public bool UpdatePhong(string maPhong, string maToa, string tenPhong, string loaiPhong, int soLuongSinhVienHienTai, int SoLuongSinhVienToiDa, string tinhTrangPhong)
         {

@@ -52,7 +52,7 @@ namespace QLSVKTX.DAO
             {
                 string query = string.Format("INSERT dbo.SinhVien (MaSinhVien, HoTen, NgaySinh, GioiTinh, NamHoc, SoDienThoai, DiaChi, CMND_CCCD, NgayLamHopDong, NgayKetThucHopDong, MaPhong, Khoa )VALUES  ( N'{0}', N'{1}', N'{2}',N'{3}', {4}, N'{5}', N'{6}', N'{7}', N'{8}', N'{9}', N'{10}', N'{11}' )", maSV, hoTen, ngaySinh, gioiTinh, namHoc, sdt, diaChi, cccd, ngayLamHopDong, ngayKetThucHopDong, maPhong, khoa);
                 int result = DataProvider.Instance.ExecuteNonQuery(query);
-
+                
                 return result > 0;
 
             }
@@ -75,7 +75,7 @@ namespace QLSVKTX.DAO
         }
         public bool UpdateNgayKetThucHopDongToNull(string maSV, string ngayKetThucHopDong)
         {
-            string query = string.Format("UPDATE dbo.SinhVien SET NgayKetThucHopDong = N'{1}' WHERE MaSinhVien = N'{0}'", maSV, ngayKetThucHopDong);
+            string query = string.Format("UPDATE dbo.SinhVien SET NgayKetThucHopDong = N'{1}', MaPhong = null WHERE MaSinhVien = N'{0}'", maSV, ngayKetThucHopDong);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -135,6 +135,17 @@ namespace QLSVKTX.DAO
             }
 
             return sinhVienList;
+        }
+        public SinhVien GetSinhVienByMaSinhVien(string maSV)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From dbo.SinhVien Where MaSinhVien = '" + maSV + "'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                return new SinhVien(item);
+            }
+
+            return null;
         }
     }
 }

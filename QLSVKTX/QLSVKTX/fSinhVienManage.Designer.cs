@@ -240,11 +240,11 @@
             // dtgvSinhVien
             // 
             this.dtgvSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvSinhVien.Location = new System.Drawing.Point(28, 261);
+            this.dtgvSinhVien.Location = new System.Drawing.Point(499, 261);
             this.dtgvSinhVien.Name = "dtgvSinhVien";
             this.dtgvSinhVien.RowHeadersWidth = 51;
             this.dtgvSinhVien.RowTemplate.Height = 24;
-            this.dtgvSinhVien.Size = new System.Drawing.Size(1468, 224);
+            this.dtgvSinhVien.Size = new System.Drawing.Size(997, 224);
             this.dtgvSinhVien.TabIndex = 34;
             // 
             // btnAdd

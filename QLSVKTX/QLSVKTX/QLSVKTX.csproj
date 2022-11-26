@@ -65,6 +65,12 @@
     <Compile Include="fDashboard.Designer.cs">
       <DependentUpon>fDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="fDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDoiMatKhau.Designer.cs">
+      <DependentUpon>fDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="fHoaDonManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fDashboard.resx">
       <DependentUpon>fDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDoiMatKhau.resx">
+      <DependentUpon>fDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fHoaDonManage.resx">
       <DependentUpon>fHoaDonManage.cs</DependentUpon>

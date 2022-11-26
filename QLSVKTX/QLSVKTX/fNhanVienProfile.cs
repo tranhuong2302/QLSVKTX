@@ -24,13 +24,13 @@ namespace QLSVKTX
         public fNhanVienProfile(NhanVien nhanVien)
         {
             InitializeComponent();
-            LoginNhanVien = nhanVien;
+            this.LoginNhanVien = nhanVien;
         }
         void ChangeNhanVien(NhanVien nhanVien)
         {
             txbMaNV.Text = nhanVien.MaNV;
             txbHoTen.Text = nhanVien.HoTen;
-
+            dtpNgaySinh.Value = nhanVien.NgaySinh;
             txbSDT.Text = nhanVien.Sdt;
             txbDiaChi.Text = nhanVien.DiaChi;
             cbGioiTinh.Text = nhanVien.GioiTinh;
@@ -117,6 +117,12 @@ namespace QLSVKTX
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             UpdateProfileNhanVien();
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            fDoiMatKhau f = new fDoiMatKhau(LoginNhanVien);
+            f.ShowDialog();
         }
     }
 }

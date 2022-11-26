@@ -17,3 +17,4 @@ C:\Users\ADMIN\Desktop\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.fPhongManage.re
 C:\Users\ADMIN\Desktop\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.fHoaDonManage.resources
 C:\Users\ADMIN\Desktop\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.fThietBiManage.resources
 C:\Users\ADMIN\Desktop\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.fSinhVienManage.resources
+C:\Users\ADMIN\Desktop\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.fDoiMatKhau.resources
