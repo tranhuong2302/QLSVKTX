@@ -58,7 +58,6 @@ namespace QLSVKTX.DTO
             var ngayKetThucHopDong = row["NgayKetThucHopDong"];
             if (ngayKetThucHopDong.ToString() != "")
                 this.NgayKetThucHopDong = (DateTime)ngayKetThucHopDong;
-           // this.NgayKetThucHopDong = (DateTime)row["NgayKetThucHopDong"];
             this.MaPhong = row["MaPhong"].ToString();
             this.Khoa = row["Khoa"].ToString();
         }

@@ -65,6 +65,7 @@
             this.btnSearchByMaPhong = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txbToa = new System.Windows.Forms.TextBox();
+            this.btnNullNgayKetThucHopDong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSinhVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupNamHoc)).BeginInit();
             this.SuspendLayout();
@@ -416,11 +417,22 @@
             this.txbToa.Size = new System.Drawing.Size(100, 22);
             this.txbToa.TabIndex = 66;
             // 
+            // btnNullNgayKetThucHopDong
+            // 
+            this.btnNullNgayKetThucHopDong.Location = new System.Drawing.Point(645, 177);
+            this.btnNullNgayKetThucHopDong.Name = "btnNullNgayKetThucHopDong";
+            this.btnNullNgayKetThucHopDong.Size = new System.Drawing.Size(130, 51);
+            this.btnNullNgayKetThucHopDong.TabIndex = 67;
+            this.btnNullNgayKetThucHopDong.Text = "Kết thúc hợp đồng";
+            this.btnNullNgayKetThucHopDong.UseVisualStyleBackColor = true;
+            this.btnNullNgayKetThucHopDong.Click += new System.EventHandler(this.btnNullNgayKetThucHopDong_Click);
+            // 
             // fSinhVienManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1522, 506);
+            this.Controls.Add(this.btnNullNgayKetThucHopDong);
             this.Controls.Add(this.txbToa);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txbSeachByMaPhong);
@@ -506,5 +518,6 @@
         private System.Windows.Forms.Button btnSearchByMaPhong;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txbToa;
+        private System.Windows.Forms.Button btnNullNgayKetThucHopDong;
     }
 }

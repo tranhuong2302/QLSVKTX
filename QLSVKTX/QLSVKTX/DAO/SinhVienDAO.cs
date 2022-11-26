@@ -73,6 +73,13 @@ namespace QLSVKTX.DAO
 
             return result > 0;
         }
+        public bool UpdateNgayKetThucHopDongToNull(string maSV, string ngayKetThucHopDong)
+        {
+            string query = string.Format("UPDATE dbo.SinhVien SET NgayKetThucHopDong = N'{1}' WHERE MaSinhVien = N'{0}'", maSV, ngayKetThucHopDong);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
         //xóa
         public bool DeleteSinhVienByMaSinhVien(string maSinhVien)
         {
