@@ -159,19 +159,24 @@ namespace QLSVKTX
         }
         void DeleteToa(string maToa)
         {
-            if (txbMaToa.Text == null || txbMaToa.Text == "")
-            {
-                MessageBox.Show("Bạn không được để trống Mã Tòa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (ToaDAO.Instance.DeleteToaByMaToa(maToa))
-            {
-                MessageBox.Show("Xóa Tòa thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            if (MessageBox.Show("Bạn có chắc là xóa tòa này?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
             {
-                MessageBox.Show("Xóa Tòa thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txbMaToa.Text == null || txbMaToa.Text == "")
+                {
+                    MessageBox.Show("Bạn không được để trống Mã Tòa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (ToaDAO.Instance.DeleteToaByMaToa(maToa))
+                {
+                    MessageBox.Show("Xóa Tòa thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Tòa thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                LoadToa();
             }
-            LoadToa();
+            
         }
 
         private void btnDeleteToa_Click(object sender, EventArgs e)

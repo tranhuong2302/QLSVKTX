@@ -33,6 +33,10 @@
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnNhanVienProfile = new System.Windows.Forms.Button();
             this.btnToa = new System.Windows.Forms.Button();
+            this.btnPhong = new System.Windows.Forms.Button();
+            this.btnHoaDon = new System.Windows.Forms.Button();
+            this.btnThietBi = new System.Windows.Forms.Button();
+            this.btnSinhVien = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -71,11 +75,55 @@
             this.btnToa.UseVisualStyleBackColor = true;
             this.btnToa.Click += new System.EventHandler(this.btnToa_Click);
             // 
+            // btnPhong
+            // 
+            this.btnPhong.Location = new System.Drawing.Point(100, 250);
+            this.btnPhong.Name = "btnPhong";
+            this.btnPhong.Size = new System.Drawing.Size(170, 67);
+            this.btnPhong.TabIndex = 4;
+            this.btnPhong.Text = "Quản lý phòng";
+            this.btnPhong.UseVisualStyleBackColor = true;
+            this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
+            // 
+            // btnHoaDon
+            // 
+            this.btnHoaDon.Location = new System.Drawing.Point(311, 250);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(170, 67);
+            this.btnHoaDon.TabIndex = 5;
+            this.btnHoaDon.Text = "Quản lý hóa đơn";
+            this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
+            // 
+            // btnThietBi
+            // 
+            this.btnThietBi.Location = new System.Drawing.Point(524, 250);
+            this.btnThietBi.Name = "btnThietBi";
+            this.btnThietBi.Size = new System.Drawing.Size(170, 67);
+            this.btnThietBi.TabIndex = 6;
+            this.btnThietBi.Text = "Quản lý thiết bị";
+            this.btnThietBi.UseVisualStyleBackColor = true;
+            this.btnThietBi.Click += new System.EventHandler(this.btnThietBi_Click);
+            // 
+            // btnSinhVien
+            // 
+            this.btnSinhVien.Location = new System.Drawing.Point(311, 168);
+            this.btnSinhVien.Name = "btnSinhVien";
+            this.btnSinhVien.Size = new System.Drawing.Size(170, 67);
+            this.btnSinhVien.TabIndex = 7;
+            this.btnSinhVien.Text = "Quản lý sinh viên";
+            this.btnSinhVien.UseVisualStyleBackColor = true;
+            this.btnSinhVien.Click += new System.EventHandler(this.btnSinhVien_Click);
+            // 
             // fDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSinhVien);
+            this.Controls.Add(this.btnThietBi);
+            this.Controls.Add(this.btnHoaDon);
+            this.Controls.Add(this.btnPhong);
             this.Controls.Add(this.btnToa);
             this.Controls.Add(this.btnNhanVienProfile);
             this.Controls.Add(this.btnNhanVien);
@@ -91,5 +139,9 @@
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button btnNhanVienProfile;
         private System.Windows.Forms.Button btnToa;
+        private System.Windows.Forms.Button btnPhong;
+        private System.Windows.Forms.Button btnHoaDon;
+        private System.Windows.Forms.Button btnThietBi;
+        private System.Windows.Forms.Button btnSinhVien;
     }
 }

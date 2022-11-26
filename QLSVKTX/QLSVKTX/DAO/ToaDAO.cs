@@ -14,7 +14,7 @@ namespace QLSVKTX.DAO
             private set { instance = value; }
         }
         private ToaDAO() { }
-        //Lấy danh sách nhanvien từ database
+        //Lấy danh sách từ database
         public List<Toa> GetListToa()
         {
             List<Toa> list = new List<Toa>();
@@ -72,6 +72,7 @@ namespace QLSVKTX.DAO
         //xóa
         public bool DeleteToaByMaToa(string maToa)
         {
+            PhongDAO.Instance.UpdatePhongToNull(maToa);
             string query = string.Format("DELETE dbo.Toa Where MaToa = N'{0}'", maToa);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -92,6 +93,17 @@ namespace QLSVKTX.DAO
             }
 
             return toaList;
+        }
+        public Toa GetToaByMaToa(string maToa)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From dbo.Toa Where MaToa = '" + maToa + "'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                return new Toa(item);
+            }
+
+            return null;
         }
     }
 }

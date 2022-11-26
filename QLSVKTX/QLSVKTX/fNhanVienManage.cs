@@ -21,7 +21,8 @@ namespace QLSVKTX
             InitializeComponent();
             LoadInfo();
             this.loginNhanVien = nhanVien;
-            dtgvNhanVien.Columns["MatKhau"].Visible = true;
+            dtgvNhanVien.Columns["MatKhau"].Visible = false;
+            dtgvNhanVien.Columns[0].HeaderText = "Mã nhân viên";
         }
         void LoadInfo()
         {

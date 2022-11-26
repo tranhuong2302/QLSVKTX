@@ -47,11 +47,11 @@
             this.txbChucVu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txbMatKhau = new System.Windows.Forms.TextBox();
-            this.pbView = new System.Windows.Forms.PictureBox();
-            this.pbHide = new System.Windows.Forms.PictureBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
+            this.pbHide = new System.Windows.Forms.PictureBox();
+            this.pbView = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbHide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
             this.SuspendLayout();
             // 
             // txbMaNV
@@ -206,34 +206,7 @@
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(100, 22);
             this.txbMatKhau.TabIndex = 40;
-            // 
-            // pbView
-            // 
-            this.pbView.BackColor = System.Drawing.Color.Transparent;
-            this.pbView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbView.Image = ((System.Drawing.Image)(resources.GetObject("pbView.Image")));
-            this.pbView.Location = new System.Drawing.Point(747, 210);
-            this.pbView.Margin = new System.Windows.Forms.Padding(4);
-            this.pbView.Name = "pbView";
-            this.pbView.Size = new System.Drawing.Size(31, 30);
-            this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbView.TabIndex = 43;
-            this.pbView.TabStop = false;
-            this.pbView.Click += new System.EventHandler(this.pbView_Click);
-            // 
-            // pbHide
-            // 
-            this.pbHide.BackColor = System.Drawing.Color.Transparent;
-            this.pbHide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbHide.Image = ((System.Drawing.Image)(resources.GetObject("pbHide.Image")));
-            this.pbHide.Location = new System.Drawing.Point(747, 210);
-            this.pbHide.Margin = new System.Windows.Forms.Padding(4);
-            this.pbHide.Name = "pbHide";
-            this.pbHide.Size = new System.Drawing.Size(31, 30);
-            this.pbHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHide.TabIndex = 42;
-            this.pbHide.TabStop = false;
-            this.pbHide.Click += new System.EventHandler(this.pbHide_Click);
+            this.txbMatKhau.UseSystemPasswordChar = true;
             // 
             // btnSubmit
             // 
@@ -245,14 +218,42 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // pbHide
+            // 
+            this.pbHide.BackColor = System.Drawing.Color.Transparent;
+            this.pbHide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbHide.Image = ((System.Drawing.Image)(resources.GetObject("pbHide.Image")));
+            this.pbHide.Location = new System.Drawing.Point(747, 210);
+            this.pbHide.Margin = new System.Windows.Forms.Padding(4);
+            this.pbHide.Name = "pbHide";
+            this.pbHide.Size = new System.Drawing.Size(31, 30);
+            this.pbHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHide.TabIndex = 45;
+            this.pbHide.TabStop = false;
+            this.pbHide.Click += new System.EventHandler(this.pbHide_Click);
+            // 
+            // pbView
+            // 
+            this.pbView.BackColor = System.Drawing.Color.Transparent;
+            this.pbView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbView.Image = ((System.Drawing.Image)(resources.GetObject("pbView.Image")));
+            this.pbView.Location = new System.Drawing.Point(747, 210);
+            this.pbView.Margin = new System.Windows.Forms.Padding(4);
+            this.pbView.Name = "pbView";
+            this.pbView.Size = new System.Drawing.Size(31, 30);
+            this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbView.TabIndex = 46;
+            this.pbView.TabStop = false;
+            this.pbView.Click += new System.EventHandler(this.pbView_Click);
+            // 
             // fNhanVienProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1524, 450);
-            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.pbView);
             this.Controls.Add(this.pbHide);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txbMatKhau);
             this.Controls.Add(this.label8);
@@ -273,8 +274,8 @@
             this.Controls.Add(this.txbHoTen);
             this.Name = "fNhanVienProfile";
             this.Text = "fNhanVienProfile";
-            ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,8 +301,8 @@
         private System.Windows.Forms.TextBox txbChucVu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txbMatKhau;
-        private System.Windows.Forms.PictureBox pbView;
-        private System.Windows.Forms.PictureBox pbHide;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.PictureBox pbHide;
+        private System.Windows.Forms.PictureBox pbView;
     }
 }

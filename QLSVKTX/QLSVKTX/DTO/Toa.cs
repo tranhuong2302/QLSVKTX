@@ -10,10 +10,6 @@ namespace QLSVKTX.DTO
         private int soPhong;
         private string maNguoiQuanLy;
 
-        public string MaToa { get => maToa; set => maToa = value; }
-        public string TenToa { get => tenToa; set => tenToa = value; }
-        public int SoPhong { get => soPhong; set => soPhong = value; }
-        public string MaNguoiQuanLy { get => maNguoiQuanLy; set => maNguoiQuanLy = value; }
         public Toa(string maToa, string tenToa, int soPhong, string maNguoiQuanLy)
         {
             this.MaToa = maToa;
@@ -28,5 +24,10 @@ namespace QLSVKTX.DTO
             this.SoPhong = (int)row["SoPhong"];
             this.MaNguoiQuanLy = row["MaNguoiQuanLy"].ToString();
         }
+
+        public string MaToa { get => maToa; set => maToa = value; }
+        public string TenToa { get => tenToa; set => tenToa = value; }
+        public int SoPhong { get => soPhong; set => soPhong = value; }
+        public string MaNguoiQuanLy { get => maNguoiQuanLy; set => maNguoiQuanLy = value; }
     }
 }

@@ -50,5 +50,29 @@ namespace QLSVKTX
             fToaManage f = new fToaManage();
             f.ShowDialog();
         }
+
+        private void btnPhong_Click(object sender, EventArgs e)
+        {
+            fPhongManage f = new fPhongManage();
+            f.ShowDialog();
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            fHoaDonManage f = new fHoaDonManage();
+            f.ShowDialog();
+        }
+
+        private void btnThietBi_Click(object sender, EventArgs e)
+        {
+            fThietBiManage f = new fThietBiManage();
+            f.ShowDialog();
+        }
+
+        private void btnSinhVien_Click(object sender, EventArgs e)
+        {
+            fSinhVienManage f = new fSinhVienManage();
+            f.ShowDialog();
+        }
     }
 }

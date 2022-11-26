@@ -25,25 +25,14 @@ namespace QLSVKTX.DTO
 
         private string trangThai;
 
-        public string MaNV { get => maNV; set => maNV = value; }
-        public string HoTen { get => hoTen; set => hoTen = value; }
-        public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
-        public string Sdt { get => sdt; set => sdt = value; }
-        public string DiaChi { get => diaChi; set => diaChi = value; }
-        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
-        public string Cccd { get => cccd; set => cccd = value; }
-        public string ChucVu { get => chucVu; set => chucVu = value; }
-        public string MatKhau { get => matKhau; set => matKhau = value; }
-        public string TrangThai { get => trangThai; set => trangThai = value; }
-
-        public NhanVien(string maNV, string hoTen, DateTime ngaySinh, string sdt, string diaChi, string gioiTinh, string cccd, string chucVu, string matKhau, string trangThai )
+        public NhanVien(string maNV, string hoTen, DateTime ngaySinh, string sdt, string diaChi, string gioiTinh, string cccd, string chucVu, string matKhau, string trangThai)
         {
             this.MaNV = maNV;
             this.HoTen = hoTen;
             this.NgaySinh = ngaySinh;
             this.Sdt = sdt;
             this.DiaChi = diaChi;
-            this.GioiTinh= gioiTinh;
+            this.GioiTinh = gioiTinh;
             this.Cccd = cccd;
             this.ChucVu = chucVu;
             this.MatKhau = matKhau;
@@ -64,5 +53,17 @@ namespace QLSVKTX.DTO
             this.TrangThai = row["TrangThai"].ToString();
 
         }
+
+        public string MaNV { get => maNV; set => maNV = value; }
+        public string HoTen { get => hoTen; set => hoTen = value; }
+        public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
+        public string Sdt { get => sdt; set => sdt = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string Cccd { get => cccd; set => cccd = value; }
+        public string ChucVu { get => chucVu; set => chucVu = value; }
+        public string MatKhau { get => matKhau; set => matKhau = value; }
+        public string TrangThai { get => trangThai; set => trangThai = value; }
+
     }
 }
