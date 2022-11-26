@@ -19,7 +19,7 @@ namespace QLSVKTX.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLSVKTX;Integrated Security=True"; // or @""; // sử dụng đễ truy vấn sql
+        private string connectionSTR = @"Data Source=.\SQLEXPRESS;Initial Catalog=dot_ktx;Integrated Security=True"; // or @""; // sử dụng đễ truy vấn sql
 
 
         public DataTable ExecuteQuery(string query, object[] parameter = null) // trả về số dòng thành công

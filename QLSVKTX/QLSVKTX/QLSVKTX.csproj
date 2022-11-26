@@ -47,15 +47,101 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\HoaDonDienNuocDAO.cs" />
+    <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\PhongDAO.cs" />
+    <Compile Include="DAO\SinhVienDAO.cs" />
+    <Compile Include="DAO\ThietBiDAO.cs" />
+    <Compile Include="DAO\ToaDAO.cs" />
+    <Compile Include="DTO\HoaDonDienNuoc.cs" />
     <Compile Include="DTO\NhanVien.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DTO\Phong.cs" />
+    <Compile Include="DTO\SinhVien.cs" />
+    <Compile Include="DTO\ThietBi.cs" />
+    <Compile Include="DTO\Toa.cs" />
+    <Compile Include="fDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="fDashboard.Designer.cs">
+      <DependentUpon>fDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fHoaDonManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fHoaDonManage.Designer.cs">
+      <DependentUpon>fHoaDonManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNhanVienManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNhanVienManage.Designer.cs">
+      <DependentUpon>fNhanVienManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNhanVienProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNhanVienProfile.Designer.cs">
+      <DependentUpon>fNhanVienProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPhongManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPhongManage.Designer.cs">
+      <DependentUpon>fPhongManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSinhVienManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSinhVienManage.Designer.cs">
+      <DependentUpon>fSinhVienManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThietBiManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThietBiManage.Designer.cs">
+      <DependentUpon>fThietBiManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fToaManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fToaManage.Designer.cs">
+      <DependentUpon>fToaManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fDashboard.resx">
+      <DependentUpon>fDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fHoaDonManage.resx">
+      <DependentUpon>fHoaDonManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNhanVienManage.resx">
+      <DependentUpon>fNhanVienManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNhanVienProfile.resx">
+      <DependentUpon>fNhanVienProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPhongManage.resx">
+      <DependentUpon>fPhongManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSinhVienManage.resx">
+      <DependentUpon>fSinhVienManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThietBiManage.resx">
+      <DependentUpon>fThietBiManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fToaManage.resx">
+      <DependentUpon>fToaManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,6 +150,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,6 +167,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\hide.png" />
     <Content Include="Resources\Untitled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
