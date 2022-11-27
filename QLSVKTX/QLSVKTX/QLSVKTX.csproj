@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +74,12 @@
     </Compile>
     <Compile Include="fDoiMatKhau.Designer.cs">
       <DependentUpon>fDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGioiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGioiThieu.Designer.cs">
+      <DependentUpon>fGioiThieu.cs</DependentUpon>
     </Compile>
     <Compile Include="fHoaDonManage.cs">
       <SubType>Form</SubType>
@@ -127,6 +137,9 @@
     <EmbeddedResource Include="fDoiMatKhau.resx">
       <DependentUpon>fDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fGioiThieu.resx">
+      <DependentUpon>fGioiThieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fHoaDonManage.resx">
       <DependentUpon>fHoaDonManage.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +174,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,6 +191,34 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\hide.png" />
+    <None Include="Resources\add-removebg-preview.png" />
+    <Content Include="Resources\dashboard\admin.png" />
+    <Content Include="Resources\dashboard\hóa đơn.png" />
+    <Content Include="Resources\dashboard\phòng.jpg" />
+    <Content Include="Resources\dashboard\student.png" />
+    <Content Include="Resources\dashboard\thiết bị.png" />
+    <Content Include="Resources\dashboard\tòa.png" />
+    <Content Include="Resources\hương.jpg" />
+    <Content Include="Resources\icon-about.png" />
+    <Content Include="Resources\icon\add-removebg-preview.png" />
+    <Content Include="Resources\icon\block-removebg-preview.png" />
+    <Content Include="Resources\icon\build-removebg-preview.png" />
+    <Content Include="Resources\icon\delete-removebg-preview.png" />
+    <Content Include="Resources\icon\edit-removebg-preview.png" />
+    <Content Include="Resources\icon\load-removebg-preview.png" />
+    <Content Include="Resources\icon\next-removebg-preview.png" />
+    <Content Include="Resources\icon\off-removebg-preview.png" />
+    <Content Include="Resources\icon\print-removebg-preview.png" />
+    <Content Include="Resources\icon\search-removebg-preview.png" />
+    <Content Include="Resources\icon\setup-removebg-preview.png" />
+    <Content Include="Resources\icon\thùng_rác-removebg-preview.png" />
+    <Content Include="Resources\icon\tích-removebg-preview.png" />
+    <Content Include="Resources\logo-full-hcmue.png" />
+    <Content Include="Resources\logo-ktx.ico" />
+    <Content Include="Resources\icon-close.png" />
+    <Content Include="Resources\dot-required.png" />
+    <Content Include="Resources\phúc.jpg" />
+    <Content Include="Resources\thuận.jpg" />
     <Content Include="Resources\Untitled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

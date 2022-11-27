@@ -124,5 +124,9 @@ namespace QLSVKTX
             fDoiMatKhau f = new fDoiMatKhau(LoginNhanVien);
             f.ShowDialog();
         }
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -74,5 +74,16 @@ namespace QLSVKTX
             fSinhVienManage f = new fSinhVienManage();
             f.ShowDialog();
         }
+        private void about_click(object sender, EventArgs e)
+        {
+            fGioiThieu f = new fGioiThieu();
+            f.ShowDialog();
+        }
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }

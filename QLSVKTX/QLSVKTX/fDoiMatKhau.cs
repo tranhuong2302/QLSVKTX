@@ -77,5 +77,9 @@ namespace QLSVKTX
         {
             DoiMatKhauNhanVien();
         }
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
