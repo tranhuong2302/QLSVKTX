@@ -151,9 +151,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(273, 194);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 16);
+            this.label8.Size = new System.Drawing.Size(46, 16);
             this.label8.TabIndex = 44;
-            this.label8.Text = "maPhong";
+            this.label8.Text = "Phòng";
             // 
             // txbCCCD
             // 
@@ -431,6 +431,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1522, 506);
             this.Controls.Add(this.btnNullNgayKetThucHopDong);
             this.Controls.Add(this.txbToa);

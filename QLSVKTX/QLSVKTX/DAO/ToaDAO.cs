@@ -41,6 +41,15 @@ namespace QLSVKTX.DAO
             else
                 return 0;
         }
+        public int CheckCongDon(string tenToa)
+        {
+            string check = string.Format("SELECT * FROM dbo.Toa WHERE dbo.fuConvertToUnsign1(TenToa) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%' ", tenToa);
+            var test = DataProvider.Instance.ExecuteScalar(check);
+            if (test == null)
+                return 1;
+            else
+                return 0;
+        }
         //thêm
         public bool InsertToa(string maToa, string tenToa, int soPhong, string MaNguoiQuanLy)
         {
@@ -52,7 +61,17 @@ namespace QLSVKTX.DAO
                 return result > 0;
 
             }
-            else return false;
+            else
+            {
+                if(CheckCongDon(tenToa) == 1)
+                {
+                    string query = string.Format("UPDATE dbo.Toa SET SoPhong = SoPhong +1 WHERE dbo.fuConvertToUnsign1(MaToa) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%' AND dbo.fuConvertToUnsign1(TenToa) LIKE N'%' + dbo.fuConvertToUnsign1(N'{1}') + '%' ", maToa, tenToa);
+                    int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+                    return result > 0;
+                } else return false;
+      
+            }
         }
         //sửa
         public bool UpdateToa(string maToa, string tenToa, int soPhong, string MaNguoiQuanLy)
@@ -65,6 +84,20 @@ namespace QLSVKTX.DAO
         public bool UpdateToaToNull(string MaNguoiQuanLy)
         {
             string query = string.Format("UPDATE dbo.Toa SET MaNguoiQuanLy = null WHERE MaNguoiQuanLy = N'{0}'", MaNguoiQuanLy);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool UpdateSoPhongHienTaiToaCongMot(string maToa)
+        {
+            string query = string.Format("UPDATE dbo.Toa SET SoPhong = SoPhong + 1  WHERE MaToa = N'{0}'", maToa);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool UpdateSoPhongHienTaiToaTruMot(string maToa)
+        {
+            string query = string.Format("UPDATE dbo.Toa SET SoPhong = SoPhong - 1  WHERE MaToa = N'{0}'", maToa);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

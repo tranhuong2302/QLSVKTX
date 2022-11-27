@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,12 +21,14 @@ namespace QLSVKTX
         {
             InitializeComponent();
             LoadInfo();
-            LoadPhongIntoCombobox(cbMaPhong);
+
         }
         void LoadInfo()
         {
             dtgvSinhVien.DataSource = sinhVienList;
             LoadSinhVien();
+            LoadPhongIntoCombobox(cbMaPhong);
+          
             AddSinhVienBinding();
         }
         void LoadSinhVien()
@@ -46,16 +49,18 @@ namespace QLSVKTX
             dtpNgayKetThucHopDong.DataBindings.Add(new Binding("Text", dtgvSinhVien.DataSource, "NgayKetThucHopDong", true, DataSourceUpdateMode.Never));
             cbKhoa.DataBindings.Add(new Binding("Text", dtgvSinhVien.DataSource, "Khoa", true, DataSourceUpdateMode.Never));
         }
-        void LoadToaByMaToa(string maToa)
-        {
-            Toa toa = ToaDAO.Instance.GetToaByMaToa(maToa);
-            txbToa.Text = toa.TenToa.ToString();
-            
-        }
+
         void LoadPhongIntoCombobox(ComboBox cb)
         {
             cb.DataSource = PhongDAO.Instance.GetListPhong();
-            cb.DisplayMember = "MaPhong";
+            cb.DisplayMember = "TenPhong";
+        }
+        void LoadToaIntoTextBox(string maToa)
+        {
+            Toa toa = ToaDAO.Instance.GetToaByMaToa(maToa);
+            if (toa != null)
+                txbToa.Text = toa.TenToa.ToString();
+            else txbToa.Text = "";
         }
         private void txbMaSV_TextChanged(object sender, EventArgs e)
         {
@@ -66,12 +71,10 @@ namespace QLSVKTX
                     string maPhong = dtgvSinhVien.SelectedCells[0].OwningRow.Cells["MaPhong"].Value.ToString();
                     Phong phong = PhongDAO.Instance.GetPhongByMaPhong(maPhong);
                     cbMaPhong.SelectedItem = phong;
-                    
                     if (phong != null)
                     {
-                        LoadToaByMaToa(phong.MaToa);
+                        LoadToaIntoTextBox(phong.MaToa);
                     }
-                    
                     int index = -1;
                     int i = 0;
                     foreach (Phong item in cbMaPhong.Items)
@@ -87,9 +90,9 @@ namespace QLSVKTX
                         }
 
                     }
-
                     cbMaPhong.SelectedIndex = index;
                 }
+                    
             }
         }
         public static bool hasSpecialChar(string input)
@@ -180,6 +183,7 @@ namespace QLSVKTX
             DateTime ngayKetThucHopDong = dtpNgayKetThucHopDong.Value;
             string convertNgayKetThucHopDong = ngayKetThucHopDong.ToString("yyyy-MM-dd");
             string khoa = cbKhoa.Text;
+
             if (cbMaPhong.SelectedItem as Phong == null)
             {
                 MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -301,8 +305,8 @@ namespace QLSVKTX
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string maSV = txbMaSV.Text;
-            string maPhong = cbMaPhong.Text;
-            DeleteSinhVien(maSV, maPhong);
+            Phong phong = cbMaPhong.SelectedItem as Phong;
+            DeleteSinhVien(maSV, phong.MaPhong);
         }
 
         private void btnList_Click(object sender, EventArgs e)
@@ -363,10 +367,11 @@ namespace QLSVKTX
         private void btnNullNgayKetThucHopDong_Click(object sender, EventArgs e)
         {
             string maSV = txbMaSV.Text;
-            string maPhong = cbMaPhong.Text;
+            Phong phong = cbMaPhong.SelectedItem as Phong;
             DateTime ngayKetThucHopDong = DateTime.Now;
             string convertNgayKetThucHopDong = ngayKetThucHopDong.ToString("yyyy-MM-dd");
-            KetThucHopDong(maSV, convertNgayKetThucHopDong, maPhong);
+            KetThucHopDong(maSV, convertNgayKetThucHopDong, phong.MaPhong);
         }
+        
     } 
 }

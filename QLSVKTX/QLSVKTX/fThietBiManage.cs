@@ -43,7 +43,7 @@ namespace QLSVKTX
         void LoadPhongIntoCombobox(ComboBox cb)
         {
             cb.DataSource = PhongDAO.Instance.GetListPhong();
-            cb.DisplayMember = "MaPhong";
+            cb.DisplayMember = "TenPhong";
         }
 
         private void txbMaThietBi_TextChanged(object sender, EventArgs e)
