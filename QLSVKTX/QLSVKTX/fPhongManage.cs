@@ -101,6 +101,7 @@ namespace QLSVKTX
             }
             else if (PhongDAO.Instance.InsertPhong(maPhong, maToa, tenPhong, loaiPhong, hienTai, toiDa, tinhTrangPhong))
             {
+                ToaDAO.Instance.UpdateSoPhongHienTaiToaCongMot(maToa);
                 MessageBox.Show("Thêm phòng thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -130,6 +131,7 @@ namespace QLSVKTX
         }
         void updatePhong(string maPhong, string maToa, string tenPhong, string loaiPhong, int hienTai, int toiDa, string tinhTrangPhong)
         {
+            Phong phong = PhongDAO.Instance.GetPhongByMaPhong(maPhong);
             if (txbMaPhong.Text == null || txbMaPhong.Text == "")
             {
                 MessageBox.Show("Bạn không được để trống mã phòng", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -152,6 +154,8 @@ namespace QLSVKTX
             }
             else if (PhongDAO.Instance.UpdatePhong(maPhong, maToa, tenPhong, loaiPhong, hienTai, toiDa, tinhTrangPhong))
             {
+                ToaDAO.Instance.UpdateSoPhongHienTaiToaTruMot(phong.MaToa);
+                ToaDAO.Instance.UpdateSoPhongHienTaiToaCongMot(maToa);
                 MessageBox.Show("Thay đổi thông tin phòng thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -179,7 +183,7 @@ namespace QLSVKTX
                 updatePhong(maPhong, maToa, tenPhong, loaiPhong, hienTai, toiDa, tinhTrangPhong);
             }
         }
-        void deletePhong(string maPhong)
+        void deletePhong(string maPhong, string maToa)
         {
             if (MessageBox.Show("Bạn có chắc là xóa phòng này?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
@@ -190,6 +194,7 @@ namespace QLSVKTX
                 }
                 else if (PhongDAO.Instance.DeletePhongByMaPhong(maPhong))
                 {
+                    ToaDAO.Instance.UpdateSoPhongHienTaiToaTruMot(maToa);
                     MessageBox.Show("Xóa phòng thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -204,7 +209,8 @@ namespace QLSVKTX
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string maPhong = txbMaPhong.Text;
-            deletePhong(maPhong);
+            Toa toa = cbMaToa.SelectedItem as Toa;
+            deletePhong(maPhong, toa.MaToa);
         }
 
         private void btnList_Click(object sender, EventArgs e)

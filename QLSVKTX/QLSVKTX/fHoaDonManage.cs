@@ -20,6 +20,7 @@ namespace QLSVKTX
             InitializeComponent();
             LoadInfo();
             LoadPhongIntoCombobox(cbMaPhong);
+
         }
         void LoadHoaDon()
         {
@@ -45,7 +46,7 @@ namespace QLSVKTX
         void LoadPhongIntoCombobox(ComboBox cb)
         {
             cb.DataSource = PhongDAO.Instance.GetListPhong();
-            cb.DisplayMember = "MaPhong";
+            cb.DisplayMember = "TenPhong";
         }
         private void txbMaHoaDon_TextChanged(object sender, EventArgs e)
         {
