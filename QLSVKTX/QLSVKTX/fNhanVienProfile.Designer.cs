@@ -50,12 +50,14 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.pbHide = new System.Windows.Forms.PictureBox();
             this.pbView = new System.Windows.Forms.PictureBox();
+            this.btnDoiMatKhau = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
             this.SuspendLayout();
             // 
             // txbMaNV
             // 
+            this.txbMaNV.Enabled = false;
             this.txbMaNV.Location = new System.Drawing.Point(120, 40);
             this.txbMaNV.Name = "txbMaNV";
             this.txbMaNV.Size = new System.Drawing.Size(100, 22);
@@ -246,11 +248,22 @@
             this.pbView.TabStop = false;
             this.pbView.Click += new System.EventHandler(this.pbView_Click);
             // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(570, 277);
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(145, 38);
+            this.btnDoiMatKhau.TabIndex = 47;
+            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
+            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
+            // 
             // fNhanVienProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1524, 450);
+            this.Controls.Add(this.btnDoiMatKhau);
             this.Controls.Add(this.pbView);
             this.Controls.Add(this.pbHide);
             this.Controls.Add(this.btnSubmit);
@@ -304,5 +317,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.PictureBox pbHide;
         private System.Windows.Forms.PictureBox pbView;
+        private System.Windows.Forms.Button btnDoiMatKhau;
     }
 }

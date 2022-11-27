@@ -35,21 +35,53 @@ namespace QLSVKTX.DAO
 
             return list;
         }
+        //check Trùng
+        public int Check(string maPhong, string tenThietBi)
+        {
+            string check = string.Format("SELECT * FROM dbo.ThietBi WHERE dbo.fuConvertToUnsign1(MaPhong) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%' AND dbo.fuConvertToUnsign1(TenThietBi) LIKE N'%' + dbo.fuConvertToUnsign1(N'{1}') + '%' ", maPhong, tenThietBi);
+            var test = DataProvider.Instance.ExecuteScalar(check);
+            if (test == null)
+                return 1;
+            else
+                return 0;
+        }
         // thêm
         public bool InsertThietBi(string maPhong, string tenThietBi, int soLuongThietBi, int soLuongThietBiHong, int soLuongThietBiToiDa)
         {
-            string query = string.Format("INSERT dbo.ThietBi (MaPhong, TenThietBi, SoLuongThietBi, SoLuongThietBiHong, SoLuongThietBiToiDa )VALUES  ( N'{0}', N'{1}', N'{2}', {3}, {4} )", maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            if(Check(maPhong, tenThietBi) == 1)
+            {
+                string query = string.Format("INSERT dbo.ThietBi (MaPhong, TenThietBi, SoLuongThietBi, SoLuongThietBiHong, SoLuongThietBiToiDa )VALUES  ( N'{0}', N'{1}', N'{2}', {3}, {4} )", maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-            return result > 0;
+                return result > 0;
+            }
+            else
+            {
+                string query = string.Format("UPDATE dbo.ThietBi SET SoLuongThietBi = SoLuongThietBi +1, SoLuongThietBiToiDa = SoLuongThietBiToiDa +1  WHERE dbo.fuConvertToUnsign1(MaPhong) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%' AND dbo.fuConvertToUnsign1(TenThietBi) LIKE N'%' + dbo.fuConvertToUnsign1(N'{1}') + '%' ", maPhong, tenThietBi);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+                return result > 0;
+            }
         }
         //sửa 
         public bool UpdateThietBi(int maThietBi, string maPhong, string tenThietBi, int soLuongThietBi, int soLuongThietBiHong, int soLuongThietBiToiDa)
         {
-            string query = string.Format("UPDATE dbo.ThietBi SET MaPhong = N'{1}', TenThietBi = N'{2}', SoLuongThietBi = {3}, SoLuongThietBiHong = {4}, SoLuongThietBiToiDa = {5} WHERE MaThietBi = {0} ", maThietBi, maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            if(Check(maPhong, tenThietBi) == 1)
+            {
+                string query = string.Format("UPDATE dbo.ThietBi SET MaPhong = N'{1}', TenThietBi = N'{2}', SoLuongThietBi = {3}, SoLuongThietBiHong = {4}, SoLuongThietBiToiDa = {5} WHERE MaThietBi = {0} ", maThietBi, maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-            return result > 0;
+                return result > 0;
+            }
+            else
+            {
+                DeleteThietBi(maThietBi);
+                string query = string.Format("UPDATE dbo.ThietBi SET SoLuongThietBi = SoLuongThietBi + {2}, SoLuongThietBiToiDa = SoLuongThietBiToiDa + {3}  WHERE dbo.fuConvertToUnsign1(MaPhong) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%' AND dbo.fuConvertToUnsign1(TenThietBi) LIKE N'%' + dbo.fuConvertToUnsign1(N'{1}') + '%' ", maPhong, tenThietBi, soLuongThietBi, soLuongThietBiToiDa);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+                return result > 0;
+            }
+           
         }
         public bool UpdateMaPhongThietBiToNull(string maPhong)
         {

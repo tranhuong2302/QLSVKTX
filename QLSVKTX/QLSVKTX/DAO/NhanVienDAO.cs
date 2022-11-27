@@ -61,6 +61,12 @@ namespace QLSVKTX.DAO
 
             return result > 0;
         }
+        public bool DoiMatKhauByMaNhanVien(string maNV, string matKhauCu, string matKhauMoi)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_DoiMatKhau @MaNhanVien , @MatKhau , @MatKhauMoi", new object[] { maNV, matKhauCu, matKhauMoi });
+
+            return result > 0;
+        }
         //xóa
         public bool DeleteNhanVien(string maNV)
         {

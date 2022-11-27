@@ -94,6 +94,10 @@ namespace QLSVKTX
             {
                 MessageBox.Show("Bạn không được để trống số lượng thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (nupHienTai.Value > nupToiDa.Value || nupHong.Value > nupToiDa.Value || nupHienTai.Value + nupHong.Value > nupToiDa.Value)
+            {
+                MessageBox.Show("Bạn không được nhập số lượng lớn hơn số lượng thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else if (ThietBiDAO.Instance.InsertThietBi(maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa))
             {
                 MessageBox.Show("Thêm thiết bị thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -142,6 +146,14 @@ namespace QLSVKTX
             else if (nupToiDa.Text == null || nupToiDa.Text == "")
             {
                 MessageBox.Show("Bạn không được để trống số lượng thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (nupHienTai.Value > nupToiDa.Value || nupHong.Value > nupToiDa.Value)
+            {
+                MessageBox.Show("Bạn không được nhập số lượng lớn hơn số lượng thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (nupHienTai.Value + nupHong.Value > nupToiDa.Value)
+            {
+                MessageBox.Show("Bạn không được nhập tổng số lượng thiết bị và số lượng thiết bị hỏng lớn hơn thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (ThietBiDAO.Instance.UpdateThietBi(maThietBi, maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa))
             {
