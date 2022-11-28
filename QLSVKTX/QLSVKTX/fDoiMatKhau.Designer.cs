@@ -143,6 +143,7 @@
             this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbView.TabIndex = 63;
             this.pbView.TabStop = false;
+            this.pbView.Click += new System.EventHandler(this.pbView_Click);
             // 
             // pbHide
             // 
@@ -156,6 +157,7 @@
             this.pbHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbHide.TabIndex = 62;
             this.pbHide.TabStop = false;
+            this.pbHide.Click += new System.EventHandler(this.pbHide_Click);
             // 
             // label9
             // 
