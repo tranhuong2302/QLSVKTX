@@ -85,6 +85,7 @@
             this.btnSubmit.TabIndex = 60;
             this.btnSubmit.Text = "Xác nhận";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // txbNhapLaiMatKhau
             // 
