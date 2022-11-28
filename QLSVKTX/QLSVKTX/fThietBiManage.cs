@@ -86,31 +86,31 @@ namespace QLSVKTX
         {
             if (txbTenThietBi.Text == null || txbTenThietBi.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Tên thiết bị", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Tên thiết bị", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupHienTai.Text == null || nupHienTai.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống số lượng thiết bị hiện tại", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống số lượng thiết bị hiện tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupHong.Text == null || nupHong.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống số lượng thiết bị hỏng", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống số lượng thiết bị hỏng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupToiDa.Text == null || nupToiDa.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống số lượng thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống số lượng thiết bị tối đa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupHienTai.Value > nupToiDa.Value || nupHong.Value > nupToiDa.Value || nupHienTai.Value + nupHong.Value > nupToiDa.Value)
             {
-                MessageBox.Show("Bạn không được nhập số lượng lớn hơn số lượng thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được nhập số lượng lớn hơn số lượng thiết bị tối đa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (ThietBiDAO.Instance.InsertThietBi(maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa))
             {
-                MessageBox.Show("Thêm thiết bị thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm thiết bị thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thêm thiết bị thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm thiết bị thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             LoadThietBi();
         }
@@ -123,7 +123,7 @@ namespace QLSVKTX
             int soLuongThietBiToiDa = Convert.ToInt32(nupToiDa.Value);
             if (cbMaPhong.SelectedItem as Phong == null)
             {
-                MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -135,39 +135,39 @@ namespace QLSVKTX
         {
             if (txbMaThietBi.Text == null || txbMaThietBi.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Mã thiết bị", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Mã thiết bị", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (txbTenThietBi.Text == null || txbTenThietBi.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Tên thiết bị", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Tên thiết bị", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupHienTai.Text == null || nupHienTai.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống số lượng thiết bị hiện tại", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống số lượng thiết bị hiện tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupHong.Text == null || nupHong.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống số lượng thiết bị hỏng", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống số lượng thiết bị hỏng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupToiDa.Text == null || nupToiDa.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống số lượng thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống số lượng thiết bị tối đa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupHienTai.Value > nupToiDa.Value || nupHong.Value > nupToiDa.Value)
             {
-                MessageBox.Show("Bạn không được nhập số lượng lớn hơn số lượng thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được nhập số lượng lớn hơn số lượng thiết bị tối đa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupHienTai.Value + nupHong.Value > nupToiDa.Value)
             {
-                MessageBox.Show("Bạn không được nhập tổng số lượng thiết bị và số lượng thiết bị hỏng lớn hơn thiết bị tối đa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được nhập tổng số lượng thiết bị và số lượng thiết bị hỏng lớn hơn thiết bị tối đa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (ThietBiDAO.Instance.UpdateThietBi(maThietBi, maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa))
             {
-                MessageBox.Show("Thay đổi thông tin thiết bị thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thay đổi thông tin thiết bị thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thay đổi thông tin bị thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thay đổi thông tin bị thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             LoadThietBi();
         }
@@ -181,7 +181,7 @@ namespace QLSVKTX
             int soLuongThietBiToiDa = Convert.ToInt32(nupToiDa.Value);
             if (cbMaPhong.SelectedItem as Phong == null)
             {
-                MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -192,20 +192,20 @@ namespace QLSVKTX
 
         void DeleteThietBi(int maThietBi)
         {
-            if (MessageBox.Show("Bạn có chắc là xóa thiết bị này?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
+            if (MessageBox.Show("Bạn có chắc là xóa thiết bị này?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
             {
                 if (txbMaThietBi.Text == null || txbMaThietBi.Text == "")
                 {
-                    MessageBox.Show("Bạn không được để trống Mã hóa đơn", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn không được để trống Mã hóa đơn", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (ThietBiDAO.Instance.DeleteThietBi(maThietBi))
                 {
-                    MessageBox.Show("Xóa thiết bị thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa thiết bị thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Xóa thiết bị thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Xóa thiết bị thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 LoadThietBi();
             }
@@ -389,42 +389,50 @@ namespace QLSVKTX
         }
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-
-            DataColumn col1 = new DataColumn("MaThietBi");
-            DataColumn col2 = new DataColumn("MaPhong");
-            DataColumn col3 = new DataColumn("TenThietBi");
-            DataColumn col4 = new DataColumn("SoLuongThietBi");
-            DataColumn col5 = new DataColumn("SoLuongThietBiHong");
-            DataColumn col6 = new DataColumn("SoLuongThietBiToiDa");
-
-            dataTable.Columns.Add(col1);
-            dataTable.Columns.Add(col2);
-            dataTable.Columns.Add(col3);
-            dataTable.Columns.Add(col4);
-            dataTable.Columns.Add(col5);
-            dataTable.Columns.Add(col6);
-
-            foreach (DataGridViewRow dtgvRow in dtgvThietBi.Rows)
+            try
             {
-                DataRow dtRow = dataTable.NewRow();
+                DataTable dataTable = new DataTable();
 
-                dtRow[0] = dtgvRow.Cells[0].Value;
-                dtRow[1] = dtgvRow.Cells[1].Value;
-                dtRow[2] = dtgvRow.Cells[2].Value;
-                dtRow[3] = dtgvRow.Cells[3].Value;
-                dtRow[4] = dtgvRow.Cells[4].Value;
-                dtRow[5] = dtgvRow.Cells[5].Value;
+                DataColumn col1 = new DataColumn("MaThietBi");
+                DataColumn col2 = new DataColumn("MaPhong");
+                DataColumn col3 = new DataColumn("TenThietBi");
+                DataColumn col4 = new DataColumn("SoLuongThietBi");
+                DataColumn col5 = new DataColumn("SoLuongThietBiHong");
+                DataColumn col6 = new DataColumn("SoLuongThietBiToiDa");
+
+                dataTable.Columns.Add(col1);
+                dataTable.Columns.Add(col2);
+                dataTable.Columns.Add(col3);
+                dataTable.Columns.Add(col4);
+                dataTable.Columns.Add(col5);
+                dataTable.Columns.Add(col6);
+
+                foreach (DataGridViewRow dtgvRow in dtgvThietBi.Rows)
+                {
+                    DataRow dtRow = dataTable.NewRow();
+
+                    dtRow[0] = dtgvRow.Cells[0].Value;
+                    dtRow[1] = dtgvRow.Cells[1].Value;
+                    dtRow[2] = dtgvRow.Cells[2].Value;
+                    dtRow[3] = dtgvRow.Cells[3].Value;
+                    dtRow[4] = dtgvRow.Cells[4].Value;
+                    dtRow[5] = dtgvRow.Cells[5].Value;
 
 
-                dataTable.Rows.Add(dtRow);
+                    dataTable.Rows.Add(dtRow);
+                }
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ExportFile(dataTable, "Danh sách thiết bị", "Quản lý thiết bị", saveFileDialog.FileName);
+                }
             }
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            catch
             {
-                ExportFile(dataTable, "danh sach", "Quản lý thiết bị", saveFileDialog.FileName);
+                MessageBox.Show("Xin hãy vui lòng tắt file excel đang sử dụng để save đè lên !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
     }
 }

@@ -31,23 +31,23 @@ namespace QLSVKTX
             string nhapLaiMatKhau = txbNhapLaiMatKhau.Text;
             if (!matKhauMoi.Equals(nhapLaiMatKhau))
             {
-                MessageBox.Show("Nhập lại mật khẩu không trùng với mật khẩu mới", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập lại mật khẩu không trùng với mật khẩu mới", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (matKhauMoi == "" || matKhauMoi == null || nhapLaiMatKhau == null || nhapLaiMatKhau == "")
             {
 
-                MessageBox.Show("Mật khẩu mới không được để trống", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mật khẩu mới không được để trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 if (NhanVienDAO.Instance.DoiMatKhauByMaNhanVien(maNV, matKhau, matKhauMoi))
                 {
-                    MessageBox.Show("Thay đổi mật khẩu thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thay đổi mật khẩu thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Xin hãy nhập đúng mật khẩu củ", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Xin hãy nhập đúng mật khẩu củ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

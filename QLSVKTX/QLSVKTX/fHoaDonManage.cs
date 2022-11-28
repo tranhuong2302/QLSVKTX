@@ -89,23 +89,23 @@ namespace QLSVKTX
         {
             if (txbTenHoaDon.Text == null || txbTenHoaDon.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Tên hóa đơn", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Tên hóa đơn", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupTienDien.Text == null || nupTienDien.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống tiền điện", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống tiền điện", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupTienNuoc.Text == null || nupTienNuoc.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống tiền nước", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống tiền nước", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (HoaDonDienNuocDAO.Instance.InsertHoaDon(maPhong, tenHoaDon, trangThai, tienDien, tienNuoc, ngayTao))
             {
-                MessageBox.Show("Thêm hóa đơn thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm hóa đơn thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thêm hóa đơn thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm hóa đơn thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             LoadHoaDon();
         }
@@ -120,7 +120,7 @@ namespace QLSVKTX
             string convertNgayTao = ngayTao.ToString("yyyy-MM-dd");
             if (cbMaPhong.SelectedItem as Phong == null)
             {
-                MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -133,27 +133,27 @@ namespace QLSVKTX
         {
             if (txbMaHoaDon.Text == null || txbMaHoaDon.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống má hóa đơn", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống má hóa đơn", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (txbTenHoaDon.Text == null || txbTenHoaDon.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Tên hóa đơn", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Tên hóa đơn", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupTienDien.Text == null || nupTienDien.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống tiền điện", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống tiền điện", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupTienNuoc.Text == null || nupTienNuoc.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống tiền nước", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống tiền nước", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (HoaDonDienNuocDAO.Instance.UpdateHoaDon(maHoaDon, maPhong, tenHoaDon, trangThai, tienDien, tienNuoc, ngayTao))
             {
-                MessageBox.Show("Thay đổi thông tin hóa đơn thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thay đổi thông tin hóa đơn thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thay đổi thông tin thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thay đổi thông tin thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             LoadHoaDon();
         }
@@ -169,7 +169,7 @@ namespace QLSVKTX
             string convertNgayTao = ngayTao.ToString("yyyy-MM-dd");
             if (cbMaPhong.SelectedItem as Phong == null)
             {
-                MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -179,20 +179,20 @@ namespace QLSVKTX
         }
         void DeleteHoaDon(int maHoaDon)
         {
-            if (MessageBox.Show("Bạn có chắc là xóa hóa đơn này?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
+            if (MessageBox.Show("Bạn có chắc là xóa hóa đơn này?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
             {
                 if (txbMaHoaDon.Text == null || txbMaHoaDon.Text == "")
                 {
-                    MessageBox.Show("Bạn không được để trống Mã hóa đơn", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn không được để trống Mã hóa đơn", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (HoaDonDienNuocDAO.Instance.DeleteHoaDon(maHoaDon))
                 {
-                    MessageBox.Show("Xóa hóa đơn thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa hóa đơn thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Xóa hóa đơn thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Xóa hóa đơn thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 LoadHoaDon();
             }
@@ -380,44 +380,52 @@ namespace QLSVKTX
         }
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-
-            DataColumn col1 = new DataColumn("MaHoaDon");
-            DataColumn col2 = new DataColumn("MaPhong");
-            DataColumn col3 = new DataColumn("TenHoaDon");
-            DataColumn col4 = new DataColumn("TrangThai");
-            DataColumn col5 = new DataColumn("TienDien");
-            DataColumn col6 = new DataColumn("TienNuoc");
-            DataColumn col7 = new DataColumn("NgayTao");
-
-            dataTable.Columns.Add(col1);
-            dataTable.Columns.Add(col2);
-            dataTable.Columns.Add(col3);
-            dataTable.Columns.Add(col4);
-            dataTable.Columns.Add(col5);
-            dataTable.Columns.Add(col6);
-            dataTable.Columns.Add(col7);
-
-            foreach (DataGridViewRow dtgvRow in dtgvHoaDon.Rows)
+            try
             {
-                DataRow dtRow = dataTable.NewRow();
+                DataTable dataTable = new DataTable();
 
-                dtRow[0] = dtgvRow.Cells[0].Value;
-                dtRow[1] = dtgvRow.Cells[1].Value;
-                dtRow[2] = dtgvRow.Cells[2].Value;
-                dtRow[3] = dtgvRow.Cells[3].Value;
-                dtRow[4] = dtgvRow.Cells[4].Value;
-                dtRow[5] = dtgvRow.Cells[5].Value;
-                dtRow[6] = dtgvRow.Cells[6].Value;
+                DataColumn col1 = new DataColumn("MaHoaDon");
+                DataColumn col2 = new DataColumn("MaPhong");
+                DataColumn col3 = new DataColumn("TenHoaDon");
+                DataColumn col4 = new DataColumn("TrangThai");
+                DataColumn col5 = new DataColumn("TienDien");
+                DataColumn col6 = new DataColumn("TienNuoc");
+                DataColumn col7 = new DataColumn("NgayTao");
 
-                dataTable.Rows.Add(dtRow);
+                dataTable.Columns.Add(col1);
+                dataTable.Columns.Add(col2);
+                dataTable.Columns.Add(col3);
+                dataTable.Columns.Add(col4);
+                dataTable.Columns.Add(col5);
+                dataTable.Columns.Add(col6);
+                dataTable.Columns.Add(col7);
+
+                foreach (DataGridViewRow dtgvRow in dtgvHoaDon.Rows)
+                {
+                    DataRow dtRow = dataTable.NewRow();
+
+                    dtRow[0] = dtgvRow.Cells[0].Value;
+                    dtRow[1] = dtgvRow.Cells[1].Value;
+                    dtRow[2] = dtgvRow.Cells[2].Value;
+                    dtRow[3] = dtgvRow.Cells[3].Value;
+                    dtRow[4] = dtgvRow.Cells[4].Value;
+                    dtRow[5] = dtgvRow.Cells[5].Value;
+                    dtRow[6] = dtgvRow.Cells[6].Value;
+
+                    dataTable.Rows.Add(dtRow);
+                }
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ExportFile(dataTable, "Danh sách hóa đơn", "Quản lý Hóa đơn", saveFileDialog.FileName);
+                }
             }
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            catch
             {
-                ExportFile(dataTable, "danh sach", "Quản lý Hóa đơn", saveFileDialog.FileName);
+                MessageBox.Show("Xin hãy vui lòng tắt file excel đang sử dụng để save đè lên !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+           
         }
     }
 }

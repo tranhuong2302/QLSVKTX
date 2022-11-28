@@ -32,7 +32,7 @@ namespace QLSVKTX
                 fDashboard f = new fDashboard(loginNhanVien);
                 if (loginNhanVien.TrangThai == "Khóa")
                 {
-                    MessageBox.Show("Tài khoản của bạn đã bị khóa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tài khoản của bạn đã bị khóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -43,7 +43,7 @@ namespace QLSVKTX
             }
             else
             {
-                MessageBox.Show("Bạn nhập sai tài khoản hoặc mật khẩu.", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn nhập sai tài khoản hoặc mật khẩu.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -72,7 +72,7 @@ namespace QLSVKTX
 
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Bạn có thật sự muốn thoát?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }

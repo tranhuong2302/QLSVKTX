@@ -123,57 +123,57 @@ namespace QLSVKTX
             Phong phong = PhongDAO.Instance.GetPhongByMaPhong(maPhong);
             if (txbMaSV.Text == null || txbMaSV.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Mã sinh viên", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Mã sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbHoTen.Text == null || txbHoTen.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Họ Tên", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Họ Tên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbSDT.Text == null || txbSDT.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Số điện thoại", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Số điện thoại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if(Regex.IsMatch(txbSDT.Text, @"^[a-zA-Z]+$") || hasSpecialChar(txbSDT.Text))
             {
-                MessageBox.Show("Không được nhập chữ hoặc kí tự đặc biệt", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không được nhập chữ hoặc kí tự đặc biệt", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txbSDT.Text.Length != 10)
             {
-                MessageBox.Show("Bạn vui lòng nhập đúng định dạng số điện thoại (10 số)", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn vui lòng nhập đúng định dạng số điện thoại (10 số)", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbDiaChi.Text == null || txbDiaChi.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Địa Chỉ", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Địa Chỉ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbCCCD.Text == null || txbCCCD.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống CMND/CCCD", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống CMND/CCCD", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbCCCD.TextLength < 9 || txbCCCD.TextLength == 10 || txbCCCD.TextLength == 11 || txbCCCD.TextLength > 12)
             {
-                MessageBox.Show("Bạn vui lòng nhập đúng định dạng CMND(9 số), CCCD(12 số)", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn vui lòng nhập đúng định dạng CMND(9 số), CCCD(12 số)", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (phong.TinhTrangPhong == "Bảo trì")
             {
-                MessageBox.Show("Phòng hiện tại đang bảo trì xin vui lòng chọn phòng khác", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Phòng hiện tại đang bảo trì xin vui lòng chọn phòng khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (cbGioiTinh.Text != phong.LoaiPhong)
             {
-                MessageBox.Show("Không được ở phòng khác giới", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không được ở phòng khác giới", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if(phong.SoLuongSinhVienHienTai >= phong.SoLuongSinhVienToiDa)
             {
-                MessageBox.Show("Phòng bạn chọn đã hết chỗ xin vui lòng chọn phòng khác", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Phòng bạn chọn đã hết chỗ xin vui lòng chọn phòng khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (SinhVienDAO.Instance.InsertSinhVien(maSV, hoTen, ngaySinh, gioiTinh, namHoc, sdt, diaChi, cccd, ngayLamHopDong, ngayKetThucHopDong, maPhong, khoa))
             {
                 PhongDAO.Instance.UpdateSoLuongHienTaiCongMot(maPhong);
-                MessageBox.Show("Thêm sinh viên thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm sinh viên thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadSinhVien();
             }
             else
             {
-                MessageBox.Show("Thêm sinh viên thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm sinh viên thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -198,7 +198,7 @@ namespace QLSVKTX
 
             if (cbMaPhong.SelectedItem as Phong == null)
             {
-                MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -213,58 +213,58 @@ namespace QLSVKTX
             SinhVien sinhVien = SinhVienDAO.Instance.GetSinhVienByMaSinhVien(maSV);
             if (txbMaSV.Text == null || txbMaSV.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Mã sinh viên", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Mã sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbHoTen.Text == null || txbHoTen.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Họ Tên", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Họ Tên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbSDT.Text == null || txbSDT.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Số điện thoại", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Số điện thoại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (Regex.IsMatch(txbSDT.Text, @"^[a-zA-Z]+$") || hasSpecialChar(txbSDT.Text))
             {
-                MessageBox.Show("Không được nhập chữ hoặc kí tự đặc biệt", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không được nhập chữ hoặc kí tự đặc biệt", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txbSDT.Text.Length != 10)
             {
-                MessageBox.Show("Bạn vui lòng nhập đúng định dạng số điện thoại (10 số)", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn vui lòng nhập đúng định dạng số điện thoại (10 số)", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbDiaChi.Text == null || txbDiaChi.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Địa Chỉ", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Địa Chỉ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbCCCD.Text == null || txbCCCD.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống CMND/CCCD", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống CMND/CCCD", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbCCCD.TextLength < 9 || txbCCCD.TextLength == 10 || txbCCCD.TextLength == 11 || txbCCCD.TextLength > 12)
             {
-                MessageBox.Show("Bạn vui lòng nhập đúng định dạng CMND(9 số), CCCD(12 số)", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn vui lòng nhập đúng định dạng CMND(9 số), CCCD(12 số)", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (phong.TinhTrangPhong == "Bảo trì")
             {
-                MessageBox.Show("Phòng hiện tại đang bảo trì xin vui lòng chọn phòng khác", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Phòng hiện tại đang bảo trì xin vui lòng chọn phòng khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (cbGioiTinh.Text != phong.LoaiPhong)
             {
-                MessageBox.Show("Không được ở phòng khác giới", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không được ở phòng khác giới", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (phong.SoLuongSinhVienHienTai >= phong.SoLuongSinhVienToiDa)
             {
-                MessageBox.Show("Phòng bạn chọn đã hết chỗ xin vui lòng chọn phòng khác", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Phòng bạn chọn đã hết chỗ xin vui lòng chọn phòng khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (SinhVienDAO.Instance.UpdateSinhVien(maSV, hoTen, ngaySinh, gioiTinh, namHoc, sdt, diaChi, cccd, ngayLamHopDong, ngayKetThucHopDong, maPhong, khoa))
             {
                 PhongDAO.Instance.UpdateSoLuongHienTaiTruMot(sinhVien.MaPhong);
                 PhongDAO.Instance.UpdateSoLuongHienTaiCongMot(maPhong);
-                MessageBox.Show("Thay đổi thông tin sinh viên thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thay đổi thông tin sinh viên thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadSinhVien();
             }
             else
             {
-                MessageBox.Show("thay đổi thông tin sinh viên thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("thay đổi thông tin sinh viên thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnEdit_Click(object sender, EventArgs e)
@@ -285,7 +285,7 @@ namespace QLSVKTX
             string khoa = cbKhoa.Text;
             if (cbMaPhong.SelectedItem as Phong == null)
             {
-                MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -295,20 +295,20 @@ namespace QLSVKTX
         }
         void DeleteSinhVien(string maSV, string maPhong)
         {
-            if (MessageBox.Show("Bạn có chắc là xóa sinh viên này?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
+            if (MessageBox.Show("Bạn có chắc là xóa sinh viên này?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
             {
                 
                 if (SinhVienDAO.Instance.DeleteSinhVienByMaSinhVien(maSV))
                 {
                     PhongDAO.Instance.UpdateSoLuongHienTaiTruMot(maPhong);
-                    MessageBox.Show("Xóa thành công thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa thành công thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadSinhVien();
 
                 }
                 else
                 {
-                    MessageBox.Show("Xóa sinh viên thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Xóa sinh viên thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 
@@ -358,19 +358,19 @@ namespace QLSVKTX
         }
         void KetThucHopDong(string maSV, string ngayKetThucHopDong, string maPhong)
         {
-            if (MessageBox.Show("Bạn có chắc là muốn kết thúc hợp đồng?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
+            if (MessageBox.Show("Bạn có chắc là muốn kết thúc hợp đồng?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
             {
 
                 if (SinhVienDAO.Instance.UpdateNgayKetThucHopDongToNull(maSV, ngayKetThucHopDong))
                 {
                     PhongDAO.Instance.UpdateSoLuongHienTaiTruMot(maPhong);
-                    MessageBox.Show("Kết thúc hợp đồng thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Kết thúc hợp đồng thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else
                 {
-                    MessageBox.Show("Kết thúc hợp đồng thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kết thúc hợp đồng thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 LoadSinhVien();
@@ -571,59 +571,67 @@ namespace QLSVKTX
         }
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-
-            DataColumn col1 = new DataColumn("MaSinhVien");
-            DataColumn col2 = new DataColumn("HoTen");
-            DataColumn col3 = new DataColumn("NgaySinh");
-            DataColumn col4 = new DataColumn("GioiTinh");
-            DataColumn col5 = new DataColumn("NamHoc");
-            DataColumn col6 = new DataColumn("SoDienThoai");
-            DataColumn col7 = new DataColumn("DiaChi");
-            DataColumn col8 = new DataColumn("CMND_CCCD");
-            DataColumn col9 = new DataColumn("NgayLamHopDong");
-            DataColumn col10 = new DataColumn("NgayKetThucHopDong");
-            DataColumn col11 = new DataColumn("MaPhong");
-            DataColumn col12 = new DataColumn("Khoa");
-
-            dataTable.Columns.Add(col1);
-            dataTable.Columns.Add(col2);
-            dataTable.Columns.Add(col3);
-            dataTable.Columns.Add(col4);
-            dataTable.Columns.Add(col5);
-            dataTable.Columns.Add(col6);
-            dataTable.Columns.Add(col7);
-            dataTable.Columns.Add(col8);
-            dataTable.Columns.Add(col9);
-            dataTable.Columns.Add(col10);
-            dataTable.Columns.Add(col11);
-            dataTable.Columns.Add(col12);
-
-            foreach (DataGridViewRow dtgvRow in dtgvSinhVien.Rows)
+            try
             {
-                DataRow dtRow = dataTable.NewRow();
+                DataTable dataTable = new DataTable();
 
-                dtRow[0] = dtgvRow.Cells[0].Value;
-                dtRow[1] = dtgvRow.Cells[1].Value;
-                dtRow[2] = dtgvRow.Cells[2].Value;
-                dtRow[3] = dtgvRow.Cells[3].Value;
-                dtRow[4] = dtgvRow.Cells[4].Value;
-                dtRow[5] = dtgvRow.Cells[5].Value;
-                dtRow[6] = dtgvRow.Cells[6].Value;
-                dtRow[7] = dtgvRow.Cells[7].Value;
-                dtRow[8] = dtgvRow.Cells[8].Value;
-                dtRow[9] = dtgvRow.Cells[9].Value;
-                dtRow[10] = dtgvRow.Cells[10].Value;
-                dtRow[11] = dtgvRow.Cells[11].Value;
+                DataColumn col1 = new DataColumn("MaSinhVien");
+                DataColumn col2 = new DataColumn("HoTen");
+                DataColumn col3 = new DataColumn("NgaySinh");
+                DataColumn col4 = new DataColumn("GioiTinh");
+                DataColumn col5 = new DataColumn("NamHoc");
+                DataColumn col6 = new DataColumn("SoDienThoai");
+                DataColumn col7 = new DataColumn("DiaChi");
+                DataColumn col8 = new DataColumn("CMND_CCCD");
+                DataColumn col9 = new DataColumn("NgayLamHopDong");
+                DataColumn col10 = new DataColumn("NgayKetThucHopDong");
+                DataColumn col11 = new DataColumn("MaPhong");
+                DataColumn col12 = new DataColumn("Khoa");
 
-                dataTable.Rows.Add(dtRow);
+                dataTable.Columns.Add(col1);
+                dataTable.Columns.Add(col2);
+                dataTable.Columns.Add(col3);
+                dataTable.Columns.Add(col4);
+                dataTable.Columns.Add(col5);
+                dataTable.Columns.Add(col6);
+                dataTable.Columns.Add(col7);
+                dataTable.Columns.Add(col8);
+                dataTable.Columns.Add(col9);
+                dataTable.Columns.Add(col10);
+                dataTable.Columns.Add(col11);
+                dataTable.Columns.Add(col12);
+
+                foreach (DataGridViewRow dtgvRow in dtgvSinhVien.Rows)
+                {
+                    DataRow dtRow = dataTable.NewRow();
+
+                    dtRow[0] = dtgvRow.Cells[0].Value;
+                    dtRow[1] = dtgvRow.Cells[1].Value;
+                    dtRow[2] = dtgvRow.Cells[2].Value;
+                    dtRow[3] = dtgvRow.Cells[3].Value;
+                    dtRow[4] = dtgvRow.Cells[4].Value;
+                    dtRow[5] = dtgvRow.Cells[5].Value;
+                    dtRow[6] = dtgvRow.Cells[6].Value;
+                    dtRow[7] = dtgvRow.Cells[7].Value;
+                    dtRow[8] = dtgvRow.Cells[8].Value;
+                    dtRow[9] = dtgvRow.Cells[9].Value;
+                    dtRow[10] = dtgvRow.Cells[10].Value;
+                    dtRow[11] = dtgvRow.Cells[11].Value;
+
+                    dataTable.Rows.Add(dtRow);
+                }
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ExportFile(dataTable, "Danh sách sinh viên", "Quản lý Sinh viên", saveFileDialog.FileName);
+                }
             }
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            catch
             {
-                ExportFile(dataTable, "danh sach", "Quản lý Sinh viên", saveFileDialog.FileName);
+                MessageBox.Show("Xin hãy vui lòng tắt file excel đang sử dụng để save đè lên !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
     } 
 }

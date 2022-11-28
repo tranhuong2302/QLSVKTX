@@ -81,23 +81,23 @@ namespace QLSVKTX
         {
             if (txbMaToa.Text == null || txbMaToa.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Mã Tòa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Mã Tòa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbTenToa.Text == null || txbTenToa.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Tên Tòa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Tên Tòa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupSoPhong.Text == null || nupSoPhong.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Số Phòng", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Số Phòng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if(ToaDAO.Instance.InsertToa(maToa, tenToa, soPhong, maNguoiQuanLy))
             {
-                MessageBox.Show("Thêm Tòa thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm Tòa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thêm Tòa thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm Tòa thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             LoadToa();
         }
@@ -109,7 +109,7 @@ namespace QLSVKTX
             int soPhong = (int)nupSoPhong.Value;
             if (cbMaNguoiQuanLy.SelectedItem as NhanVien == null)
             {
-                MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -121,27 +121,27 @@ namespace QLSVKTX
         {
             if (txbMaToa.Text == null || txbMaToa.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Mã Tòa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Mã Tòa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbTenToa.Text == null || txbTenToa.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Tên Tòa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Tên Tòa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupSoPhong.Text == null || nupSoPhong.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Số Phòng", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Số Phòng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (nupSoPhong.Value <= 0)
             {
-                MessageBox.Show("Số phòng không thể bé hơn 0", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số phòng không thể bé hơn 0", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (ToaDAO.Instance.UpdateToa(maToa, tenToa, soPhong, maNguoiQuanLy))
             {
-                MessageBox.Show("Thay đổi thông tin tòa thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thay đổi thông tin tòa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thay đổi thông tin tòa thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thay đổi thông tin tòa thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             LoadToa();
         }
@@ -153,7 +153,7 @@ namespace QLSVKTX
             int soPhong = (int)nupSoPhong.Value;
             if (cbMaNguoiQuanLy.SelectedItem as NhanVien == null)
             {
-                MessageBox.Show("Lỗi !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -163,20 +163,20 @@ namespace QLSVKTX
         }
         void DeleteToa(string maToa)
         {
-            if (MessageBox.Show("Bạn có chắc là xóa tòa này?", "Announcement", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
+            if (MessageBox.Show("Bạn có chắc là xóa tòa này?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK) { }
             else
             {
                 if (txbMaToa.Text == null || txbMaToa.Text == "")
                 {
-                    MessageBox.Show("Bạn không được để trống Mã Tòa", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn không được để trống Mã Tòa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (ToaDAO.Instance.DeleteToaByMaToa(maToa))
                 {
-                    MessageBox.Show("Xóa Tòa thành công", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa Tòa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Xóa Tòa thất bại !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Xóa Tòa thất bại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 LoadToa();
             }
@@ -353,35 +353,43 @@ namespace QLSVKTX
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-
-            DataColumn col1 = new DataColumn("MaToa");
-            DataColumn col2 = new DataColumn("TenToa");
-            DataColumn col3 = new DataColumn("SoPhong");
-            DataColumn col4 = new DataColumn("MaNguoiQuanLy");
-
-            dataTable.Columns.Add(col1);
-            dataTable.Columns.Add(col2);
-            dataTable.Columns.Add(col3);
-            dataTable.Columns.Add(col4);
-
-            foreach (DataGridViewRow dtgvRow in dtgvToa.Rows)
+            try
             {
-                DataRow dtRow = dataTable.NewRow();
+                DataTable dataTable = new DataTable();
 
-                dtRow[0] = dtgvRow.Cells[0].Value;
-                dtRow[1] = dtgvRow.Cells[1].Value;
-                dtRow[2] = dtgvRow.Cells[2].Value;
-                dtRow[3] = dtgvRow.Cells[3].Value;
+                DataColumn col1 = new DataColumn("MaToa");
+                DataColumn col2 = new DataColumn("TenToa");
+                DataColumn col3 = new DataColumn("SoPhong");
+                DataColumn col4 = new DataColumn("MaNguoiQuanLy");
 
-                dataTable.Rows.Add(dtRow);
+                dataTable.Columns.Add(col1);
+                dataTable.Columns.Add(col2);
+                dataTable.Columns.Add(col3);
+                dataTable.Columns.Add(col4);
+
+                foreach (DataGridViewRow dtgvRow in dtgvToa.Rows)
+                {
+                    DataRow dtRow = dataTable.NewRow();
+
+                    dtRow[0] = dtgvRow.Cells[0].Value;
+                    dtRow[1] = dtgvRow.Cells[1].Value;
+                    dtRow[2] = dtgvRow.Cells[2].Value;
+                    dtRow[3] = dtgvRow.Cells[3].Value;
+
+                    dataTable.Rows.Add(dtRow);
+                }
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ExportFile(dataTable, "Danh sách tòa", "Quản lý tòa", saveFileDialog.FileName);
+                }
             }
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            catch
             {
-                ExportFile(dataTable, "danh sach", "Quản lý tòa", saveFileDialog.FileName);
+                MessageBox.Show("Xin hãy vui lòng tắt file excel đang sử dụng để save đè lên !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+         
         }
     }
 }

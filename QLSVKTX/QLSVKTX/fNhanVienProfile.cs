@@ -52,47 +52,47 @@ namespace QLSVKTX
 
             if (txbMaNV.Text == null || txbMaNV.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Mã Nhân Viên", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Mã Nhân Viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbHoTen.Text == null || txbHoTen.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Họ Tên", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Họ Tên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbSDT.Text == null || txbSDT.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Số điện thoại", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Số điện thoại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbSDT.Text.Length != 10)
             {
-                MessageBox.Show("Bạn vui lòng nhập đúng định dạng số điện thoại (10 số)", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn vui lòng nhập đúng định dạng số điện thoại (10 số)", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbDiaChi.Text == null || txbDiaChi.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Địa Chỉ", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Địa Chỉ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbCCCD.Text == null || txbCCCD.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống CMND/CCCD", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống CMND/CCCD", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbCCCD.TextLength < 9 || txbCCCD.TextLength == 10 || txbCCCD.TextLength == 11 || txbCCCD.TextLength > 12)
             {
-                MessageBox.Show("Bạn vui lòng nhập đúng định dạng CMND(9 số), CCCD(12 số)", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn vui lòng nhập đúng định dạng CMND(9 số), CCCD(12 số)", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txbChucVu.Text == null || txbChucVu.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống Chức vụ", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn không được để trống Chức vụ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (NhanVienDAO.Instance.ChangeProfileNhanVien(maNV, matKhau, hoTen, convertNgaySinh, sdt, diaChi, gioiTinh, cccd, chucVu))
             {
-                MessageBox.Show("Thay đổi thông tin thành công bạn hãy đăng nhập lại để cập nhật thông tin tài khoản", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thay đổi thông tin thành công bạn hãy đăng nhập lại để cập nhật thông tin tài khoản", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else if(matKhau == ""){
-                MessageBox.Show("Không được để trống mật khẩu", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không được để trống mật khẩu", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Bạn nhập sai mật khẩu", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn nhập sai mật khẩu", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             };
         }
       
