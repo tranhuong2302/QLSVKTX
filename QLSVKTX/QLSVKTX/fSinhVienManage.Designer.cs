@@ -130,7 +130,7 @@
             this.btnSearchByHoTen.Name = "btnSearchByHoTen";
             this.btnSearchByHoTen.Size = new System.Drawing.Size(200, 38);
             this.btnSearchByHoTen.TabIndex = 22;
-            this.btnSearchByHoTen.Text = "Tìm kiếm theo tên";
+            this.btnSearchByHoTen.Text = "Tìm theo tên";
             this.btnSearchByHoTen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchByHoTen.UseVisualStyleBackColor = true;
             this.btnSearchByHoTen.Click += new System.EventHandler(this.btnSearchByHoTen_Click);
@@ -330,7 +330,7 @@
             this.btnSearchByMaSV.Name = "btnSearchByMaSV";
             this.btnSearchByMaSV.Size = new System.Drawing.Size(200, 38);
             this.btnSearchByMaSV.TabIndex = 24;
-            this.btnSearchByMaSV.Text = "Tìm kiếm mã sinh viên";
+            this.btnSearchByMaSV.Text = "Tìm theo MSSV";
             this.btnSearchByMaSV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchByMaSV.UseVisualStyleBackColor = true;
             this.btnSearchByMaSV.Click += new System.EventHandler(this.btnSearchByMaSV_Click);
@@ -352,7 +352,7 @@
             this.btnSearchByMaPhong.Name = "btnSearchByMaPhong";
             this.btnSearchByMaPhong.Size = new System.Drawing.Size(200, 38);
             this.btnSearchByMaPhong.TabIndex = 20;
-            this.btnSearchByMaPhong.Text = "Tìm kiếm theo mã phòng";
+            this.btnSearchByMaPhong.Text = "Tìm theo mã phòng";
             this.btnSearchByMaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchByMaPhong.UseVisualStyleBackColor = true;
             this.btnSearchByMaPhong.Click += new System.EventHandler(this.btnSearchByMaPhong_Click);
@@ -380,14 +380,12 @@
             // 
             this.btnNullNgayKetThucHopDong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNullNgayKetThucHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNullNgayKetThucHopDong.Image = global::QLSVKTX.Properties.Resources.search_removebg_preview;
             this.btnNullNgayKetThucHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNullNgayKetThucHopDong.Location = new System.Drawing.Point(1087, 386);
+            this.btnNullNgayKetThucHopDong.Location = new System.Drawing.Point(1041, 387);
             this.btnNullNgayKetThucHopDong.Name = "btnNullNgayKetThucHopDong";
-            this.btnNullNgayKetThucHopDong.Size = new System.Drawing.Size(164, 51);
+            this.btnNullNgayKetThucHopDong.Size = new System.Drawing.Size(206, 51);
             this.btnNullNgayKetThucHopDong.TabIndex = 18;
-            this.btnNullNgayKetThucHopDong.Text = "Tìm hợp đồng";
-            this.btnNullNgayKetThucHopDong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNullNgayKetThucHopDong.Text = "Kết thúc hợp đồng";
             this.btnNullNgayKetThucHopDong.UseVisualStyleBackColor = true;
             this.btnNullNgayKetThucHopDong.Click += new System.EventHandler(this.btnNullNgayKetThucHopDong_Click);
             // 

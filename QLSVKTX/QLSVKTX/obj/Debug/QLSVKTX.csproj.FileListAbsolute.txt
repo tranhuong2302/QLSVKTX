@@ -39,3 +39,4 @@ C:\Users\Admin\Desktop\Project\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.csproj.
 C:\Users\Admin\Desktop\Project\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.exe
 C:\Users\Admin\Desktop\Project\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.pdb
 C:\Users\Admin\Desktop\Project\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.fGioiThieu.resources
+C:\Users\ADMIN\Desktop\QLSVKTX\QLSVKTX\QLSVKTX\obj\Debug\QLSVKTX.fGioiThieu.resources
