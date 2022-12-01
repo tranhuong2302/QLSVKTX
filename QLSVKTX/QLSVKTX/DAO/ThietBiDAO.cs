@@ -63,6 +63,17 @@ namespace QLSVKTX.DAO
                 return result > 0;
             }
         }
+        public ThietBi GetThietBiByMaThietBi(int maThietBi)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From dbo.ThietBi Where MaThietBi = '" + maThietBi + "'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                return new ThietBi(item);
+            }
+
+            return null;
+        }
         //sửa 
         public bool UpdateThietBi(int maThietBi, string maPhong, string tenThietBi, int soLuongThietBi, int soLuongThietBiHong, int soLuongThietBiToiDa)
         {
@@ -75,11 +86,21 @@ namespace QLSVKTX.DAO
             }
             else
             {
-                DeleteThietBi(maThietBi);
-                string query = string.Format("UPDATE dbo.ThietBi SET SoLuongThietBi = SoLuongThietBi + {2}, SoLuongThietBiToiDa = SoLuongThietBiToiDa + {3}  WHERE dbo.fuConvertToUnsign1(MaPhong) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%' AND dbo.fuConvertToUnsign1(TenThietBi) LIKE N'%' + dbo.fuConvertToUnsign1(N'{1}') + '%' ", maPhong, tenThietBi, soLuongThietBi, soLuongThietBiToiDa);
-                int result = DataProvider.Instance.ExecuteNonQuery(query);
-
-                return result > 0;
+                ThietBi thietBi = GetThietBiByMaThietBi(maThietBi);
+                if(thietBi.MaPhong != maPhong)
+                {
+                    string query = string.Format("UPDATE dbo.ThietBi SET SoLuongThietBi = SoLuongThietBi + {2}, SoLuongThietBiToiDa = SoLuongThietBiToiDa + {3}, SoLuongThietBiHong = SoLuongThietBiHong + {4}  WHERE dbo.fuConvertToUnsign1(MaPhong) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%' AND dbo.fuConvertToUnsign1(TenThietBi) LIKE N'%' + dbo.fuConvertToUnsign1(N'{1}') + '%' ", maPhong, tenThietBi, soLuongThietBi, soLuongThietBiToiDa, soLuongThietBiHong);
+                    int result = DataProvider.Instance.ExecuteNonQuery(query);
+                    DeleteThietBi(maThietBi);
+                    return result > 0;
+                }
+                else
+                {
+                    string query = string.Format("UPDATE dbo.ThietBi SET MaPhong = N'{1}', TenThietBi = N'{2}', SoLuongThietBi = {3}, SoLuongThietBiHong = {4}, SoLuongThietBiToiDa = {5} WHERE MaThietBi = {0} ", maThietBi, maPhong, tenThietBi, soLuongThietBi, soLuongThietBiHong, soLuongThietBiToiDa);
+                    int result = DataProvider.Instance.ExecuteNonQuery(query);
+                    return result > 0;
+                }
+                
             }
            
         }
